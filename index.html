@@ -636,10 +636,10 @@
 </footer>
 </body>
 <script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-gsap.registerPlugin(ScrollTrigger);
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
+<!-- <script>
+gsap.registerPlugin(ScrollTrigger); -->
 
 /* ---------------- HERO SECTION ---------------- */
 // gsap.from(".hero h2, .hero span, .hero .cta-buttons", {
@@ -719,31 +719,31 @@ gsap.registerPlugin(ScrollTrigger);
 // });
 
  // Left side animation
-  gsap.from(".contact-left", {
-    scrollTrigger: {
-      trigger: ".contact-section",
-      start: "top 80%", // trigger point
-      toggleActions: "play none none none"
-    },
-    x: -200,   // slide from left
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out"
-  });
+//   gsap.from(".contact-left", {
+//     scrollTrigger: {
+//       trigger: ".contact-section",
+//       start: "top 80%", // trigger point
+//       toggleActions: "play none none none"
+//     },
+//     x: -200,   // slide from left
+//     opacity: 0,
+//     duration: 1.2,
+//     ease: "power3.out"
+//   });
 
-  // Right side animation
-  gsap.from(".contact-right", {
-    scrollTrigger: {
-      trigger: ".contact-section",
-      start: "top 80%",
-      toggleActions: "play none none none"
-    },
-    x: 200,    // slide from right
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out"
-  });
+//   // Right side animation
+//   gsap.from(".contact-right", {
+//     scrollTrigger: {
+//       trigger: ".contact-section",
+//       start: "top 80%",
+//       toggleActions: "play none none none"
+//     },
+//     x: 200,    // slide from right
+//     opacity: 0,
+//     duration: 1.2,
+//     ease: "power3.out"
+//   });
 
 
-</script>
+// </script>
 </html>
