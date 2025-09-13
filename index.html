@@ -19,9 +19,11 @@
 <body>
   <!-- PRELOADER -->
   <div id="preloader">
-    <div class="loader-circle"></div>
-    <div class="loader-text">Snap Vacations</div>
-  </div>
+  <div class="loader-circle"></div>
+  <div class="loader-text">Snap Vacations</div>
+</div>
+
+
 
   <!-- HEADER -->
   <header id="head">
@@ -715,5 +717,33 @@ gsap.from("footer", {
     once: true
   }
 });
+
+ // Left side animation
+  gsap.from(".contact-left", {
+    scrollTrigger: {
+      trigger: ".contact-section",
+      start: "top 80%", // trigger point
+      toggleActions: "play none none none"
+    },
+    x: -200,   // slide from left
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+  // Right side animation
+  gsap.from(".contact-right", {
+    scrollTrigger: {
+      trigger: ".contact-section",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    x: 200,    // slide from right
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out"
+  });
+
+
 </script>
 </html>
