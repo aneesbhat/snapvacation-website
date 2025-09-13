@@ -133,6 +133,11 @@ let reviewIndex = 0;
   setInterval(showNextReview, 2000); // 1.5 seconds per card
 
 
+  // GSAP
+
+  
+
+
 
 
 

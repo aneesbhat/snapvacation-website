@@ -589,11 +589,9 @@
         by injected humour, or randomised words which don't look even slightly believable.
       </p>
       <div class="snap-footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/share/1MFw5BcKNZ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/snap_vacations?igsh=MW5wczEyOHJncG90" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.link/d6smx9" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -618,7 +616,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact Us</h4>
+        <h4>Contact Us</h4> 
         <ul>
           <li> <a href="mailto:info.snapvacations@gmail.com?subject=Kashmir Tour Package&body=I want to book kashmir tour package">info.snapvacations@gmail.com</a></li>
           <li> <a href="tel:+121234567">+91-6005920087</a></li>
@@ -636,4 +634,99 @@
 </footer>
 </body>
 <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------------- HERO SECTION ---------------- */
+gsap.from(".hero h2, .hero span, .hero .cta-buttons", {
+  y: 60,
+  opacity: 0,
+  duration: 1.2,
+  stagger: 0.25,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top 70%",
+  }
+});
+
+/* ---------------- PACKAGE CARDS ---------------- */
+(function() {
+  const cards = gsap.utils.toArray(".package-card");
+
+  gsap.set(cards, { opacity: 0 });
+
+  ScrollTrigger.batch(cards, {
+    interval: 0.15,
+    batchMax: 6,
+    onEnter: batch => {
+      gsap.fromTo(batch, {
+        x: (i, el) => {
+          const index = cards.indexOf(el);
+          if (index % 4 === 0) return -150; // left
+          if (index % 4 === 1) return 150;  // right
+          return 0;
+        },
+        y: (i, el) => {
+          const index = cards.indexOf(el);
+          if (index % 4 === 2) return 120;  // bottom
+          if (index % 4 === 3) return -120; // top
+          return 0;
+        },
+        opacity: 0
+      }, {
+        x: 0, y: 0, opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: { each: 0.15, from: "edges" }
+      });
+    },
+    start: "top 80%",
+    once: true
+  });
+})();
+
+/* ---------------- WHY CHOOSE US ---------------- */
+gsap.from(".choose-box", {
+  y: 80,
+  opacity: 0,
+  duration: 1.1,
+  ease: "power3.out",
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".why-choose-us",
+    start: "top 85%",
+    once: true
+  }
+});
+
+/* ---------------- REVIEWS ---------------- */
+gsap.from(".review-card", {
+  scale: 0.85,
+  opacity: 0,
+  duration: 1.2,
+  ease: "back.out(1.7)",
+  stagger: 0.25,
+  scrollTrigger: {
+    trigger: ".reviews-section",
+    start: "top 85%",
+    once: true
+  }
+});
+
+/* ---------------- FOOTER ---------------- */
+gsap.from("footer", {
+  y: 100,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top 90%",
+    once: true
+  }
+});
+</script>
 </html>
