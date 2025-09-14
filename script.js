@@ -151,6 +151,66 @@ let reviewIndex = 0;
     });
   });
 
+  // SweetAlert2 library
+
+   // Handle form submission
+    document.getElementById("leadForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent actual form submission
+      
+      // SweetAlert2 popup
+      Swal.fire({
+        title: "Thank You!",
+        text: "Your form has been successfully submitted.",
+        icon: "success",
+        confirmButtonText: "OK"
+      });
+    });
+
+
+    document.getElementById("leadForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    // Honeypot spam check
+    if (document.getElementById("website").value !== "") {
+      return; // Bot detected, do nothing
+    }
+
+    // Get form values
+    const name = this.fullname.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const packageCategory = this.package.value;
+
+    // Extra validation for phone number
+    const phoneRegex = /^\d{10,12}$/;
+    if (!phoneRegex.test(phone)) {
+      Swal.fire({
+        title: "Invalid Phone",
+        text: "Please enter a valid phone number (10–12 digits).",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
+      return;
+    }
+
+    // Success popup
+    Swal.fire({
+      title: "Thank You, " + name + "!",
+      text: "Your request for the " + packageCategory + " package has been received. We will contact you shortly.",
+      icon: "success",
+      confirmButtonText: "Great!"
+    }).then(() => {
+      // Reset form after success
+      document.getElementById("leadForm").reset();
+    });
+  });
+
+
+  
+
+    
+  
+
   
 
   
