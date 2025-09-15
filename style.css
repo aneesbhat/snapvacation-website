@@ -1195,39 +1195,39 @@ input:focus, :user-invalid {border-color:red;}
 }
 
 .call-btn {
-  width:66px;
-  height:66px;
+  width:55px;
+  height:55px;
   background-color:var(--secondary--hex);
   border-radius:50%;
   display:flex;
   justify-content:center;
   align-items:center;
   position:fixed;
-  bottom:150px;
-  right:15px;
+  bottom:90px;
+  left:15px;
 }
 
 .call-btn i {
   color:white;
-  font-size:30px;
+  font-size:24px;
 }
 
 .wapp-btn {
-  width:66px;
-  height:66px;
+  width:55px;
+  height:55px;
   background-color:var(--primary--hex);
   border-radius:50%;
   display:flex;
   justify-content:center;
   align-items:center;
   position:fixed;
-  bottom:55px;
-  right:15px;
+  bottom:20px;
+  left:15px;
 }
 
 .wapp-btn i {
   color:white;
-  font-size:36px;
+  font-size:30px;
   
 }
 
