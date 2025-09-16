@@ -1210,6 +1210,7 @@ input:focus, :user-invalid {border-color:red;}
 .call-btn i {
   color:white;
   font-size:24px;
+  animation:fbtn 0.6s 0s infinite linear forwards;
 }
 
 .wapp-btn {
@@ -1228,10 +1229,12 @@ input:focus, :user-invalid {border-color:red;}
 .wapp-btn i {
   color:white;
   font-size:30px;
+  animation:fbtn 0.6s 0s infinite linear forwards;
   
 }
 
-.wapp-btn:hover {
+
+/* .wapp-btn:hover {
   animation:fixed 1s 0s linear 1;
   overflow:hidden;
 }
@@ -1240,6 +1243,24 @@ input:focus, :user-invalid {border-color:red;}
 .call-btn:hover  {
   animation:fixed 1s 0s linear 1;
   overflow:hidden;
+} */
+
+@keyframes fbtn {
+  0% {
+    transform:translateY(-5px);
+    overflow:hidden;
+  }
+
+  50% {
+    transform:translateY(-6px);
+    overflow:hidden;
+  }
+
+  100% {
+    transform:translateY(0px);
+    overflow:hidden;
+  }
+  
 }
 
 @keyframes fixed {
