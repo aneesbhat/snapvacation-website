@@ -15,6 +15,7 @@ document.getElementById("openCanvasBtn").addEventListener("click", () => offcanv
 document.getElementById("closeCanvasBtn").addEventListener("click", () => offcanvas.classList.remove("active"));
 
 // POPUP
+// Existing popup functions
 const popup = document.getElementById("popup");
 const closePopupBtn = document.getElementById("closePopupBtn");
 
@@ -26,6 +27,51 @@ document.getElementById("openPopupBtnMobile").addEventListener("click", openPopu
 document.getElementById("heroPopupBtn").addEventListener("click", openPopup);
 closePopupBtn.addEventListener("click", closePopup);
 popup.addEventListener("click", (e) => { if(e.target === popup) closePopup(); });
+
+// --- SweetAlert2 + FormSubmit.co Integration ---
+const form = document.getElementById("leadForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent redirect
+
+  // Honeypot spam check
+  if(form.website.value !== "") return; 
+
+  const formData = new FormData(form);
+
+  fetch("https://formsubmit.co/bisma1055@gmail.com", { // replace with your FormSubmit email
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  })
+  .then(response => {
+    if(response.ok) {
+      // 🔹 Do NOT add success popup here
+      // Your old success script will handle it
+      form.reset();
+    } else {
+      throw new Error("FormSubmit returned an error");
+    }
+  })
+  .catch(error => {
+    // ❌ Error popup with "Call Now"
+    Swal.fire({
+      title: 'Oops!',
+      text: 'We could not receive your lead. Please call us directly.',
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Call Now',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if(result.isConfirmed) {
+        // Redirect to phone dialer
+        window.location.href = "tel:+916005920087"; // replace with your number
+      }
+    });
+    console.error("Form submission error:", error);
+  });
+});
+
 
 // FORM VALIDATION
 const leadForm = document.getElementById("leadForm");
@@ -199,7 +245,7 @@ let reviewIndex = 0;
 // SweetAlert2 For Contact Us Section
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { 
   document.querySelectorAll(".leadForm").forEach((form) => {
     form.addEventListener("submit", function(e) {
       e.preventDefault(); // ✅ Block page reload
@@ -219,18 +265,51 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Success popup
-      Swal.fire({
-        title: `Thank You, ${name}!`,
-        text: `Your request for the ${packageCategory} has been received.`,
-        icon: "success",
-        confirmButtonText: "Great!"
-      }).then(() => {
-        form.reset();
+      // Prepare form data
+      const formData = new FormData(form);
+
+      // Submit to FormSubmit.co
+      fetch("https://formsubmit.co/bisma1055@gmail.com", { // replace with your email
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      })
+      .then(response => {
+        if (response.ok) {
+          // ✅ Success popup (dynamic message)
+          Swal.fire({
+            title: `Thank You, ${name}!`,
+            text: `Your request for the ${packageCategory} has been received.`,
+            icon: "success",
+            confirmButtonText: "Great!"
+          }).then(() => {
+            form.reset();
+          });
+        } else {
+          throw new Error("FormSubmit server error");
+        }
+      })
+      .catch(error => {
+        // ❌ Error popup with "Call Now" option
+        Swal.fire({
+          title: "Oops!",
+          text: "We could not receive your lead. Please call us directly.",
+          icon: "error",
+          showCancelButton: true,
+          confirmButtonText: "Call Now",
+          cancelButtonText: "Cancel"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Redirect to phone dialer
+            window.location.href = "tel:+916005920087"; // replace with your number
+          }
+        });
+        console.error("Form submission error:", error);
       });
     });
   });
 });
+
 
 
 

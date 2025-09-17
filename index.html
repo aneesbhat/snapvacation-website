@@ -32,7 +32,7 @@
       <a href="#packages">Packages</a>
       <a href="#Testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <button class="nav-btn" id="openPopupBtn">Book Now</button>
+      <button class="nav-btn" id="openPopupBtn">Get Free Quote</button>
     </nav>
     <button class="menu-btn" id="openCanvasBtn">☰</button>
   </header>
@@ -46,7 +46,7 @@
     <a href="#packages"><i class="fa-solid fa-cubes"></i>Packages</a>
     <a href="#Testimonials"><i class="fa-solid fa-pen"></i>Testimonials</a>
     <a href="#contact"><i class="fa-solid fa-address-card"></i>Contact</a>
-    <button class="cta-btn" id="openPopupBtnMobile">Book Now</button>
+    <button class="cta-btn" id="openPopupBtnMobile">Get Free Quote</button>
   </div>
 
   <!-- HERO -->
@@ -65,7 +65,7 @@
       <span class="close-popup" id="closePopupBtn">&times;</span>
       <h3>Book Your Kashmir Trip</h3>
       <p class="sub-text">Fill in your details and our travel expert will connect with you.</p>
-      <form id="leadForm">
+      <form id="leadForm" action="https://formsubmit.co/bisma1055@gmail.com" method="POST">
         <input type="text" name="fullname" placeholder="Full Name" required autocomplete="off">
         <input type="email" name="email" placeholder="Email Address" required autocomplete="off">
         <input type="tel" name="phone" id="phone" placeholder="Enter phone number"minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
@@ -78,6 +78,10 @@
         </select>
         <!-- Honeypot anti-spam -->
         <input type="text" name="website" id="website" style="display:none;">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_redirect" value="false">
+        <input type="hidden" name="_template" value="table">
         <button type="submit">Get Free Quote</button>
       </form>
     </div>
@@ -433,11 +437,10 @@
     <div class="contact-right">
       <h3>Get Your Free Kashmir Tour Package Quote</h3>
       <div class="form-box">
-        <form class="leadForm">
+    <form class="leadForm" action="https://formsubmit.co/bisma1055@gmail.com" method="POST">
     <input type="text" name="fullname" placeholder="Full Name*" required autocomplete="off">
     <input type="email" name="email" placeholder="Email Address*" required autocomplete="off">
-    <input type="tel" name="phone" placeholder="phone number"
-    minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
+    <input type="tel" name="phone" placeholder="phone number" minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
     <select name="package" required>
       <option value="" disabled selected>Select Kashmir Package Category</option>
       <option value="basic">Classic Kashmir Package</option>
@@ -448,7 +451,9 @@
 
     <!-- Honeypot -->
     <input type="text" name="website" style="display:none;">
-
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_redirect" value="false">
+    <input type="hidden" name="_template" value="table">
     <button type="submit">Get Free Quote</button>
   </form>
     </div>
