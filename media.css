@@ -2,6 +2,21 @@
     .video-section {
         flex-direction: column;
         gap:25px;
+        padding:40px;
+        
+    }
+
+    .video-content {
+        text-align:center;
+    }
+
+    .video-content h2 {
+        line-height:35px;
+    }
+
+    .video-content p {
+        text-align:justify;
+        line-height:25px;
     }
 
     .choose-grid {
