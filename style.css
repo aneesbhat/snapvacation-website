@@ -243,7 +243,7 @@ footer {background:#2C7AA6;color:white;text-align:center;padding:15px;}
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 100px;
   background: #0A2E52; /* Dark Blue Background */
   color: #fff;
 }
