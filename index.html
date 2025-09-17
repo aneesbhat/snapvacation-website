@@ -72,11 +72,11 @@
         <input type="email" name="email" placeholder="Email Address" required autocomplete="off">
         <input type="tel" name="phone" id="phone" placeholder="Enter phone number"minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
         <select name="package" required>
-          <option value="">Select Package Category</option>
-          <option>Classic</option>
-          <option>Deluxe</option>
-          <option>Premium</option>
-          <option>Luxury</option>
+          <option value="" disabled selected>Select Package Category</option>
+          <option value="classic">Classic Kashmir Package</option>
+          <option value="standard">Deluxe Kashmir Package</option>
+          <option value="premium">Premium Kashmir Package</option>
+          <option value="luxury">Luxury Kashmir Package</option>
         </select>
         <!-- Honeypot anti-spam -->
         <input type="text" name="website" id="website" style="display:none;">
@@ -450,22 +450,26 @@
     <div class="contact-right">
       <h2>Get In Touch</h2>
       <div class="form-box">
-        <form autocomplete="off">
-          <input type="text" placeholder="Full Name*" required autocomplete="off">
-          <input type="email" placeholder="Email Address*" required autocomplete="off">
-          <input type="tel" name="phone" id="phone" placeholder="Enter phone number"minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
-          
-          <!-- Package Category Dropdown -->
-          <select required>
-            <option value="" disabled selected>Select Package Category</option>
-            <option value="basic">Classic Package</option>
-            <option value="standard">Standard Package</option>
-            <option value="premium">Premium Package</option>
-            <option value="custom">Luxury Package</option>
-          </select>
+        <form class="leadForm">
+    <input type="text" name="fullname" placeholder="Full Name*" required autocomplete="off">
+    <input type="email" name="email" placeholder="Email Address*" required autocomplete="off">
+    <input type="tel" name="phone" placeholder="Enter phone number"
+    minlength="10" maxlength="12" pattern="\d{10,12}" required autocomplete="off">
+    <select name="package" required>
+      <option value="" disabled selected>Select Package Category</option>
+      <option value="basic">Classic Kashmir Package</option>
+      <option value="standard">Deluxe Kashmir Package</option>
+      <option value="premium">Premium Kashmir Package</option>
+      <option value="custom">Luxury Kashmir Package</option>
+    </select>
 
-          <button type="submit">Submit</button>
-        </form>
+    <!-- Honeypot -->
+    <input type="text" name="website" style="display:none;">
+
+    <button type="submit">Submit</button>
+  </form>
+
+
       </div>
     </div>
 

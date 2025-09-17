@@ -150,6 +150,7 @@ let reviewIndex = 0;
       iframeWrapper.style.display = "block";
     });
   });
+  
 
   // SweetAlert2 library
 
@@ -193,6 +194,44 @@ let reviewIndex = 0;
     document.getElementById("leadForm").reset();
   });
 });
+
+
+// SweetAlert2 For Contact Us Section
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".leadForm").forEach((form) => {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // ✅ Block page reload
+
+      // Honeypot spam check
+      if (this.website.value !== "") return;
+
+      // Get form values
+      const name = this.fullname.value.trim();
+      const phone = this.phone.value.trim();
+      const packageCategory = this.package.options[this.package.selectedIndex].text;
+
+      // Phone validation
+      const phoneRegex = /^\d{10,12}$/;
+      if (!phoneRegex.test(phone)) {
+        Swal.fire("Invalid Phone", "Please enter a valid phone number (10–12 digits).", "error");
+        return;
+      }
+
+      // Success popup
+      Swal.fire({
+        title: `Thank You, ${name}!`,
+        text: `Your request for the ${packageCategory} has been received.`,
+        icon: "success",
+        confirmButtonText: "Great!"
+      }).then(() => {
+        form.reset();
+      });
+    });
+  });
+});
+
 
 
 
