@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   preloader.style.opacity = "0";
   preloader.style.visibility = "hidden";
-  setTimeout(() => preloader.style.display = "none", 600);
+  setTimeout(() => preloader.style.display = "none", 200);
 
   // Auto-open popup after 3s
   setTimeout(openPopup, 3000);
