@@ -3,7 +3,7 @@
 
   
   if (document.getElementById("website").value !== "") {
-    return; // Bot detected, do nothing
+    return; 
   }
 
   
@@ -12,7 +12,7 @@
   const phone = this.phone.value.trim();
   const packageCategory = this.package.value;
 
-  // Extra validation for phone number
+  
   const phoneRegex = /^\d{10,12}$/;
   if (!phoneRegex.test(phone)) {
     Swal.fire({
