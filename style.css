@@ -33,48 +33,65 @@ section {
   scroll-margin-top:70px;
 }
 
-/* Background balanced glow */
-.background-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 230, 109, 0.25), rgba(44, 122, 166, 0.95) 70%),
-              radial-gradient(circle at 70% 30%, rgba(255, 107, 107, 0.25), transparent 80%);
-  z-index: 0;
-}
-
-/* Preloader Container (rest same) */
-.preloader-container {
-  text-align: center;
-  z-index: 2;
-  display: flex;
+#preloader {
+  position: fixed;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background: #0d0d0d;
+  display: flex; 
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
+  align-items: center; 
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* Faster animations but visually smoother */
-.box:nth-child(1) {
-  color: #4ECDC4;
-  animation: rotateBox 1s linear infinite;
+
+.loader-circle {
+  width: 70px; height: 70px;
+  border: 6px solid rgba(255, 255, 255, 0.25); 
+  border-top: 6px solid #ffd700; 
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite, pulse 2s infinite ease-in-out;
+  margin-bottom: 25px;
 }
 
-.box:nth-child(2) {
-  color: #FFE66D;
-  animation: bounce 0.8s ease-in-out infinite;
+@keyframes spin { 
+  100% { transform: rotate(360deg); } 
 }
 
-.box:nth-child(3) {
-  color: #FF6B6B;
-  animation: bounceDelay 0.8s ease-in-out infinite;
-  animation-delay: 0.15s;
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px #ffd700, 0 0 20px rgba(255,215,0,0.6); }
+  50% { box-shadow: 0 0 25px #ffd700, 0 0 50px rgba(255,215,0,0.9); }
 }
 
-.box:nth-child(4) {
-  color: #FFFFFF;
-  animation: morph 1s ease-in-out infinite;
+
+.loader-text {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 4px;
+  margin-left:10px;
+  background: linear-gradient(90deg, #ffffff, #ffd700, #ffffff); /* white to gold */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-right: 3px solid #ffd700;
+  overflow: hidden;
+  animation: typing 3s steps(19, end) forwards, blink 0.7s step-end infinite;
+  text-shadow: 0 0 8px rgba(255,215,0,0.5), 0 0 20px rgba(255,215,0,0.8);
 }
 
+
+@keyframes typing { 
+  from { width: 0; } 
+  to { width: 19ch; } 
+}
+
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 
 
 
