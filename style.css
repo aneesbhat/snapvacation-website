@@ -364,7 +364,9 @@ footer {background:#2C7AA6;color:white;text-align:center;padding:15px;}
   padding-bottom: 20px;
   margin:auto;
   color: #ddd;
-  font-size: 1rem;
+  font-size:20px;
+  line-height:30px;
+  
 }
 
 .btn-primary {

@@ -26,6 +26,7 @@
 
     p {
       text-align:justify;
+      
     }
     
     
@@ -67,6 +68,8 @@
   </style>
 </head>
 <body>
+
+  
   
     <header id="head">
     <img src="images/logo.png" alt="Jolly Holidays logo with mountains, a lake, and trees, representing nature-focused travel and the tagline 'Feel the Nature.'">
@@ -81,6 +84,39 @@
     <button class="menu-btn" id="openCanvasBtn">☰</button>
   
   </header>
+
+  <div id="preloader">
+    <h1 class="preloader-title">Jolly Holidays</h1>
+
+    <div class="grid">
+      <div class="box"><span class="material-symbols-outlined">work_history</span></div>
+      <div class="box"><span class="material-symbols-outlined">photo_camera</span></div>
+      <div class="box"><span class="material-symbols-outlined">fort</span></div>
+      <div class="box"><span class="material-symbols-outlined">flight_takeoff</span></div>
+    </div>
+
+    <div class="loading-section">
+      <p class="loading-text">Plotting your next escape...</p>
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="offcanvas" id="offcanvas">
+    <button class="close-btn" id="closeCanvasBtn">&times;</button>
+    <h3 style="margin-bottom:30px;">Jolly Holidays</h3>
+    <a href="#home"> <i class="fa-solid fa-house"></i>Home</a>
+    <a href="#why-choose"><i class="fa-solid fa-people-group"></i>About Us</a>
+    <a href="#packages"><i class="fa-solid fa-cubes"></i>Packages</a>
+    <a href="#Testimonials"><i class="fa-solid fa-pen"></i>Testimonials</a>
+    <a href="#contact"><i class="fa-solid fa-address-card"></i>Contact</a>
+    <button class="cta-btn" id="openPopupBtnMobile">Get Free Quote</button>
+  </div>
+
 
   <section id="pvy">
     <h2 style="border-bottom:2px solid whitesmoke;">Our Commitment to Your Privacy</h2>
@@ -100,8 +136,11 @@
       Please note that this is a temporary draft version. The final Privacy Policy will reflect the latest updates on our data handling and user protection measures.
     </p>
   </section>  
+
 </body>
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iU61SNqCXZoIWUjxKo7mI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<script src="offcanvas.js"></script>
+<script src="preloader.js"></script>
 </html>
