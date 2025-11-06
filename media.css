@@ -3,15 +3,18 @@
         flex-direction: column;
         gap:25px;
         padding:40px;
+        width:100%;
         
     }
 
     .video-content {
         text-align:center;
+
     }
 
     .video-content h2 {
         line-height:35px;
+        width:150%;
     }
 
     .video-content p {
