@@ -9,6 +9,7 @@
   <meta name="description" content="Jolly Holidays’ Privacy Policy explains how our Kashmir-based travel agency protects your personal information, booking details, and ensures safe, secure transactions.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="media2.css">
   <title>Privacy Policy | Snap Vacations</title>
   <style>
     * {
@@ -26,13 +27,13 @@
 
     p {
       text-align:justify;
-      
+         
     }
     
     
     
     #pvy {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 60px auto;
       background: #0A2E52;
       color: #ffff;
@@ -41,12 +42,14 @@
       line-height: 1.8;
       font-size: 1.05rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
     #pvy h2 {
       color: white;
       font-size: 1.6rem;
       margin-bottom: 20px;
       font-weight: 600;
+      
     }
     footer {
       background: rgba(255, 255, 255, 0.1);
@@ -56,6 +59,21 @@
       color: #fff;
       font-size: 0.9rem;
       letter-spacing: 0.5px;
+    }
+
+    .image {
+      max-width:100px;
+      height:auto;
+      position:absolute;
+      top: -20px;
+      right:-90px;
+      z-index:0;
+      
+      
+    }
+
+    .image img {
+      width:100%;
     }
     @media (max-width: 768px) {
       header h1 {
@@ -79,7 +97,7 @@
       <a href="#packages">Packages</a>
       <a href="#Testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <button class="nav-btn" id="openPopupBtn">Get Free Quote</button>
+      <button class="nav-btn"><a href="index.html" style="color:white;">Return Home</a></button>
     </nav>
     <button class="menu-btn" id="openCanvasBtn">☰</button>
   
@@ -135,6 +153,9 @@
     <p>
       Please note that this is a temporary draft version. The final Privacy Policy will reflect the latest updates on our data handling and user protection measures.
     </p>
+    <div class="image">
+      <img src="images/1-removebg-preview.png"  alt="">
+    </div>
   </section>  
 
 </body>
@@ -143,4 +164,8 @@
 </script>
 <script src="offcanvas.js"></script>
 <script src="preloader.js"></script>
+<script src="popup.js"></script>
+<script src="form-one.js"></script>
+<script src="form-two.js"></script>
+<script src="formval.js"></script>
 </html>
