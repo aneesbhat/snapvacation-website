@@ -1,9 +1,10 @@
+// Optional fade-out loader when page loads
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   preloader.style.opacity = "0";
-  preloader.style.visibility = "hidden";
-  setTimeout(() => preloader.style.display = "none", 100);
+  preloader.style.transition = "opacity 0.8s ease";
 
-  // Auto-open popup after 3s
-  setTimeout(openPopup, 3000);
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 800);
 });

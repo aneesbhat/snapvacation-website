@@ -34,68 +34,167 @@ section {
 }
 
 #preloader {
-  position: fixed;
-  top: 0; left: 0; 
-  width: 100%; height: 100%;
-  background: #0d0d0d;
-  display: flex; 
-  flex-direction: column;
-  align-items: center; 
+  height: 100vh;
+  width: 100%;
+  background-color: #2C7AA6;
+  color: #fff;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  position: relative;
 }
 
-
-.loader-circle {
-  width: 70px; height: 70px;
-  border: 6px solid rgba(255, 255, 255, 0.25); 
-  border-top: 6px solid #ffd700; 
+/* Background Glows */
+.glow {
+  position: absolute;
   border-radius: 50%;
-  animation: spin 1.2s linear infinite, pulse 2s infinite ease-in-out;
-  margin-bottom: 25px;
+  filter: blur(100px);
+  opacity: 0.6;
 }
 
-@keyframes spin { 
-  100% { transform: rotate(360deg); } 
+.glow.yellow {
+  background: #FFE66D;
+  width: 200px;
+  height: 200px;
+  top: -80px;
+  left: -80px;
 }
 
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 10px #ffd700, 0 0 20px rgba(255,215,0,0.6); }
-  50% { box-shadow: 0 0 25px #ffd700, 0 0 50px rgba(255,215,0,0.9); }
+.glow.red {
+  background: #FF6B6B;
+  width: 250px;
+  height: 250px;
+  bottom: -100px;
+  right: -100px;
 }
 
-
-.loader-text {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  white-space: nowrap;
-  letter-spacing: 4px;
-  margin-left:10px;
-  background: linear-gradient(90deg, #ffffff, #ffd700, #ffffff); /* white to gold */
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border-right: 3px solid #ffd700;
-  overflow: hidden;
-  animation: typing 3s steps(19, end) forwards, blink 0.7s step-end infinite;
-  text-shadow: 0 0 8px rgba(255,215,0,0.5), 0 0 20px rgba(255,215,0,0.8);
+/* Main Container */
+.preloader-container {
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
 }
 
-
-@keyframes typing { 
-  from { width: 0; } 
-  to { width: 19ch; } 
+.preloader-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Grid of Boxes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 180px;
+  height: 180px;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Animations */
+@keyframes rotateBox {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+@keyframes bounceDelay {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes morph {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.05) rotate(-5deg); }
+  50% { transform: scale(0.95) rotate(5deg); }
+  75% { transform: scale(1.05) rotate(0deg); }
+}
+
+/* Individual Box Effects */
+.box:nth-child(1) {
+  color: #4ECDC4;
+  animation: rotateBox 1.2s linear infinite;
+}
+
+.box:nth-child(2) {
+  color: #FFE66D;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.box:nth-child(3) {
+  color: #FF6B6B;
+  animation: bounceDelay 1s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.box:nth-child(4) {
+  color: #FFFFFF;
+  animation: morph 1.2s ease-in-out infinite;
+}
+
+/* Loading Text */
+.loading-text {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
-
-
-
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+  .preloader-title {
+    font-size: 2.5rem;
+  }
+  .grid {
+    width: 140px;
+    height: 140px;
+    gap: 10px;
+  }
+  .box {
+    font-size: 1.6rem;
+  }
+}
 
 header {
   background:var(--bg--hex);color:grey;padding:0px 20px;
