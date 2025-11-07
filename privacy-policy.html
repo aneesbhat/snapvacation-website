@@ -6,51 +6,54 @@
   <title>Privacy Policy | Jolly Holidays</title>
   <meta name="author" content="Anees Irshad Bhat"> 
   <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <meta name="description" content="Jolly Holidays’ Privacy Policy explains how our Kashmir-based travel agency protects your personal information, booking details, and ensures safe, secure transactions.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
   <link rel="stylesheet" href="media2.css">
-  <title>Privacy Policy | Snap Vacations</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      
     }
-    body {
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden; /* ✅ Prevent horizontal scroll */
       font-family: 'Poppins', sans-serif;
       background: white;
       color: #fff;
-      overflow-x: hidden;
     }
 
     p {
-      text-align:justify;
-         
+      text-align: justify;
+    
     }
-    
-    
-    
+
     #pvy {
       max-width: 1300px;
       margin: 60px auto;
       background: #0A2E52;
-      color: #ffff;
+      color: #fff;
       border-radius: 16px;
       padding: 50px 40px;
       line-height: 1.8;
       font-size: 1.05rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       position: relative;
+      overflow: hidden; /* ✅ Keep inner absolute items from causing scroll */
     }
+
     #pvy h2 {
       color: white;
       font-size: 1.6rem;
       margin-bottom: 20px;
       font-weight: 600;
-      
+      border-bottom: 2px solid whitesmoke;
+      padding:10px;
     }
+
     footer {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
@@ -62,57 +65,77 @@
     }
 
     .image {
-      max-width:100px;
-      height:auto;
-      position:absolute;
-      top: -20px;
-      right:-90px;
-      z-index:0;
-      
-      
-    }
+    position: absolute;
+    bottom: 0;         
+    right: 0;           
+    width: 45%;         
+    width: 1200px;
+    height: auto;
+    z-index: 0;   
+    transform: translate(60px, -40px);
+    pointer-events: none;
+}
 
     .image img {
-      width:100%;
+      width: 100%;
+      height: auto;
+      display: block;
     }
+
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
+      #pvy {
         padding: 30px 20px;
       }
+
+      .image {
+        opacity:0;
+       
+      }
     }
+
+    @media only screen and (max-width: 1024px) {
+  /* Hide the background image */
+  .image {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Center the privacy section text vertically */
+  #pvy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    min-height: 80vh; /* adjust as needed */
+  }
+}
+
   </style>
 </head>
 <body>
-
   
-  
-    <header id="head">
-    <img src="images/logo.png" alt="Jolly Holidays logo with mountains, a lake, and trees, representing nature-focused travel and the tagline 'Feel the Nature.'">
+  <header id="head">
+    <a href="index.html"><img src="images/logo.png" alt="Jolly Holidays logo with mountains, a lake, and trees, representing nature-focused travel and the tagline 'Feel the Nature.'"></a>
     <nav class="desktop-nav">
       <a href="index.html">Home</a>
-      <a href="#why-choose">About Us</a>
-      <a href="#packages">Packages</a>
-      <a href="#Testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#why-choose">Why Us</a>
+      <a href="index.html#packages">Packages</a>
+      <a href="index.html#Testimonials">Testimonials</a>
+      <a href="index.html#contact">Contact</a>
       <button class="nav-btn"><a href="index.html" style="color:white;">Return Home</a></button>
     </nav>
     <button class="menu-btn" id="openCanvasBtn">☰</button>
-  
   </header>
 
   <div id="preloader">
     <h1 class="preloader-title">Jolly Holidays</h1>
-
     <div class="grid">
       <div class="box"><span class="material-symbols-outlined">work_history</span></div>
       <div class="box"><span class="material-symbols-outlined">photo_camera</span></div>
       <div class="box"><span class="material-symbols-outlined">fort</span></div>
       <div class="box"><span class="material-symbols-outlined">flight_takeoff</span></div>
     </div>
-
     <div class="loading-section">
       <p class="loading-text">Plotting your next escape...</p>
       <div class="dots">
@@ -123,7 +146,6 @@
     </div>
   </div>
 
-
   <div class="offcanvas" id="offcanvas">
     <button class="close-btn" id="closeCanvasBtn">&times;</button>
     <h3 style="margin-bottom:30px;">Jolly Holidays</h3>
@@ -132,12 +154,12 @@
     <a href="#packages"><i class="fa-solid fa-cubes"></i>Packages</a>
     <a href="#Testimonials"><i class="fa-solid fa-pen"></i>Testimonials</a>
     <a href="#contact"><i class="fa-solid fa-address-card"></i>Contact</a>
-    <button class="cta-btn" id="openPopupBtnMobile">Get Free Quote</button>
+    <a href="index.html" style="background-color:#2E6B3E
+;"><button class="cta-btn">Return Home</button></a>
   </div>
 
-
   <section id="pvy">
-    <h2 style="border-bottom:2px solid whitesmoke;">Our Commitment to Your Privacy</h2>
+    <h2>Our Commitment to Your Privacy</h2>
     <p>
       At Jolly Holidays, we value your trust and are dedicated to safeguarding your privacy. This Privacy Policy explains how we collect, store, and use your personal data when you engage with our website or services. The following text is a placeholder and will be replaced with the final privacy terms once the official content is ready.
     </p>
@@ -154,18 +176,37 @@
       Please note that this is a temporary draft version. The final Privacy Policy will reflect the latest updates on our data handling and user protection measures.
     </p>
     <div class="image">
-      <img src="images/1-removebg-preview.png"  alt="">
+      <img src="images/1-removebg-preview.png" alt="">
     </div>
   </section>  
 
+  <script>
+  (function(){
+    if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+      window.chatbase=(...arguments)=>{
+        if(!window.chatbase.q){window.chatbase.q=[]}
+        window.chatbase.q.push(arguments)
+      };
+      window.chatbase=new Proxy(window.chatbase,{
+        get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)
+        }
+      })
+    }
+    const onLoad=function(){
+      const script=document.createElement("script");
+      script.src="https://www.chatbase.co/embed.min.js";
+      script.id="iU61SNqCXZoIWUjxKo7mI";
+      script.domain="www.chatbase.co";
+      document.body.appendChild(script)
+    };
+    if(document.readyState==="complete"){onLoad()}
+    else{window.addEventListener("load",onLoad)}
+  })();
+  </script>
+  <script src="offcanvas.js"></script>
+  <script src="preloader.js"></script>
+
 </body>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="iU61SNqCXZoIWUjxKo7mI";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
-<script src="offcanvas.js"></script>
-<script src="preloader.js"></script>
-<script src="popup.js"></script>
-<script src="form-one.js"></script>
-<script src="form-two.js"></script>
-<script src="formval.js"></script>
 </html>
