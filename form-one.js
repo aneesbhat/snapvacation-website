@@ -8,7 +8,7 @@ form.addEventListener("submit", function(e) {
 
   const formData = new FormData(form);
 
-  fetch("https://formsubmit.co/bisma1055@gmail.com", { 
+  fetch("https://formsubmit.co/jollyholidays595@gmail.com", { 
     method: "POST",
     body: formData,
     headers: { "Accept": "application/json" }
@@ -33,7 +33,7 @@ form.addEventListener("submit", function(e) {
     }).then((result) => {
       if(result.isConfirmed) {
         
-        window.location.href = "tel:+916005920087"; 
+        window.location.href = "tel:+918899257845"; 
       }
     });
     console.error("Form submission error:", error);
