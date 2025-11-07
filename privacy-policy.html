@@ -10,7 +10,6 @@
   <meta name="description" content="Jolly Holidays’ Privacy Policy explains how our Kashmir-based travel agency protects your personal information, booking details, and ensures safe, secure transactions.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
-  <link rel="stylesheet" href="media2.css">
   <style>
     * {
       margin: 0;
@@ -82,6 +81,22 @@
       display: block;
     }
 
+    #cta-btnn {
+
+      background:transparent;
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+    }
+
+    #cta-btnn button {
+      background:var(--primary--hex);color:var(--lightsky--blue);padding:20px 30px;
+  border-radius:5px;border:none;cursor:pointer;transition:0.3s; width:100%;
+     
+    }
+
+    
+
     @media (max-width: 768px) {
       #pvy {
         padding: 30px 20px;
@@ -110,6 +125,8 @@
     min-height: 80vh; /* adjust as needed */
   }
 }
+
+
 
   </style>
 </head>
@@ -154,7 +171,7 @@
     <a href="index.html#packages"><i class="fa-solid fa-cubes"></i>Packages</a>
     <a href="index.html#Testimonials"><i class="fa-solid fa-pen"></i>Testimonials</a>
     <a href="index.html#contact"><i class="fa-solid fa-address-card"></i>Contact</a>
-    <a href="index.html" style="background-color:#2E6B3E;"><button class="cta-btn">Return Home</button></a>
+    <a href="index.html" id="cta-btnn"><button>Return Home</button></a>
   </div>
 
   <section id="pvy">
